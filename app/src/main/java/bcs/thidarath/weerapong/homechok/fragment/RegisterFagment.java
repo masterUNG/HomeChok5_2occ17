@@ -24,9 +24,8 @@ import bcs.thidarath.weerapong.homechok.R;
 public class RegisterFagment extends Fragment {
 
     //Explicit
-    private String nameString,renameString, addressString ,manString,maleString,
-      phoneString,
-      getderString, passString , rePassString;
+    private String nameString, renameString, addressString, genderString,
+            phoneString, getderString, passString, rePassString;
 
     private boolean aBoolean = true;
 
@@ -52,10 +51,29 @@ public class RegisterFagment extends Fragment {
         //save Controller
         saveController();
 
-
+        //Radio Controller
+        radioController();
 
 
     } // onActivityCreate
+
+    private void radioController() {
+        RadioGroup radioGroup = getView().findViewById(R.id.ragGender);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                aBoolean = false;
+                switch (i) {
+                    case R.id.ragman:
+                        genderString = "Male";
+                        break;
+                    case R.id.ragmale:
+                        genderString = "Female";
+                        break;
+                }
+            }
+        });
+    }
 
     private void saveController() {
         ImageView imageView = getView().findViewById(R.id.imvsave);
@@ -68,7 +86,6 @@ public class RegisterFagment extends Fragment {
                 EditText renameEdiText = getView().findViewById(R.id.editname);
                 EditText passEdiText = getView().findViewById(R.id.pass);
                 EditText repassEdiText = getView().findViewById(R.id.repass);
-
                 EditText addressEdiText = getView().findViewById(R.id.address);
                 EditText PhoneEdiText = getView().findViewById(R.id.phon);
 
@@ -78,44 +95,39 @@ public class RegisterFagment extends Fragment {
                 renameString = renameEdiText.getText().toString().trim();
                 passString = passEdiText.getText().toString().trim();
                 rePassString = repassEdiText.getText().toString().trim();
-
                 addressString = addressEdiText.getText().toString().trim();
                 phoneString = PhoneEdiText.getText().toString().trim();
 
 
-                //Check Space
-                if  (nameString.equals("")||
-                     renameString.equals("")||
-                     passString.equals("")||
-                     rePassString.equals("")||
-                        addressString.equals("")||
-                        phoneString.equals(""))
-
-
-                {
-
+                if (nameString.equals("") ||
+                        renameString.equals("") ||
+                        passString.equals("") ||
+                        rePassString.equals("") ||
+                        addressString.equals("") ||
+                        phoneString.equals("")) {
                     //True
                     Myerorr myerorr = new Myerorr(getActivity());
                     myerorr.myDlalog("กรุณากรอกให้ครบ", "เข้าใจไหม");
-
-
-                    {
-                        //True
-
-                    }
-
-
+                } else if (aBoolean) {
+                    Myerorr myerorr = new Myerorr(getActivity());
+                    myerorr.myDlalog("Gender False", "Please Choose Gender");
+                } else if (passString.equals(rePassString)) {
+                    // Password OK
+                } else {
+                    Myerorr myerorr = new Myerorr(getActivity());
+                    myerorr.myDlalog("Password False", "Please Type Password Mapping");
                 }
-            }//onclick
+
+            }
         });
     }
 
     private void toolBarController() {
         Toolbar toolbar = getView().findViewById(R.id.tooberRegister);
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
-        ((MainActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
-        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((MainActivity)getActivity()).getSupportActionBar().setTitle(R.string.newregister);
+        ((MainActivity) getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.newregister);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
