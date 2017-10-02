@@ -5,5 +5,8 @@
     <string name="newregister">สร้างบัญชี</string>
     <string name="signin">เข้าสู่ระบบ</string>
     <string name="contact">ติดต่อเรา/ลืมรหัสผ่าน</string>
+    <string name="have_space">กรุณากรอกให้ครบ</string>
+    <string name="mess_have">เข้าใจไหม</string>
+
 
 </resources>

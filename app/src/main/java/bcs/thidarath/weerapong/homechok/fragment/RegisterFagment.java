@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 import bcs.thidarath.weerapong.homechok.All.MyPostUser;
@@ -110,7 +111,7 @@ public class RegisterFagment extends Fragment {
                         phoneString.equals("")) {
                     //True
                     Myerorr myerorr = new Myerorr(getActivity());
-                    myerorr.myDlalog("กรุณากรอกให้ครบ", "เข้าใจไหม");
+                    myerorr.myDlalog(getString(R.string.have_space), getString(R.string.mess_have));
                 } else if (aBoolean) {
                     Myerorr myerorr = new Myerorr(getActivity());
                     myerorr.myDlalog("Gender False", "Please Choose Gender");
@@ -158,6 +159,15 @@ public class RegisterFagment extends Fragment {
              );
             String result = myPostUser.get();
             Log.d("2octV1", "Result ==>" + result);
+
+            if (Boolean.parseBoolean(result)) {
+                Toast.makeText(getActivity(), "Upload Success", Toast.LENGTH_SHORT).show();
+
+                getActivity().getSupportFragmentManager().popBackStack();
+
+            } else {
+                Toast.makeText(getActivity(), "Please Try Again Cannot Upload To Server", Toast.LENGTH_SHORT).show();
+            }
 
 
         } catch (Exception e) {
