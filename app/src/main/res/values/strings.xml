@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Home Chok</string>
+    <string name="user">User :</string>
+    <string name="password">Password :</string>
+    <string name="newregister">สร้างบัญชี</string>
+    <string name="signin">เข้าสู่ระบบ</string>
+    <string name="contact">ติดต่อเรา/ลืมรหัสผ่าน</string>
+
+</resources>

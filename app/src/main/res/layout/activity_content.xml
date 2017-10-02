@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--ToolBar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tooberRegister"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <!--Content-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding">
+
+        <!--Content-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#78ffffff"
+            android:orientation="vertical">
+
+            <!--Name-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                https://github.com/pdarlingq/HomeChok.git
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="เจ.เอส.แมนชั่น แขวงสวนหลวง เขต:สวนหลวง กทมฯ 10260
+         "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
+
+                <!--icon-->
+
+
+                <!--Name-->
+
+
+            </LinearLayout>
+
+            <!--User-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                https://github.com/pdarlingq/HomeChok.git  <!--icon-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round" />
+
+                <!--Name-->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ติดต่อเรา 082-579-4835:"/>
+
+
+
+            </LinearLayout>
+            <!--Password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--icon-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher" />
+
+                <!--Name-->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="สำรอง  084-104-7384"/>
+
+
+
+            </LinearLayout>
+
+
+            <!--Confirm Password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!--icon-->
+                <ImageView
+                    android:layout_width="342dp"
+                    android:layout_height="192dp"
+                    android:src="@drawable/maps" />
+
+                <!--Name-->
+
+
+            </LinearLayout>
+
+            <!--Gender-->
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--Male-->
+                <!--Famle-->
+
+
+            </RadioGroup>
+
+
+            <!--Address-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--icon-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:src="@drawable/qr" />
+
+                <!--Name-->
+
+
+            </LinearLayout>
+
+            <!--Phone Number-->
+
+            <!--Show Spinner-->
+            <android.support.v7.widget.AppCompatSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.AppCompatSpinner>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
