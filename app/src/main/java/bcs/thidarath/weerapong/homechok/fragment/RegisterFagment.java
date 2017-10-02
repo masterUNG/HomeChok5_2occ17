@@ -5,6 +5,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 
+import bcs.thidarath.weerapong.homechok.All.MyPostUser;
+import bcs.thidarath.weerapong.homechok.All.Myconstant;
 import bcs.thidarath.weerapong.homechok.All.Myerorr;
 import bcs.thidarath.weerapong.homechok.MainActivity;
 import bcs.thidarath.weerapong.homechok.R;
@@ -113,6 +116,9 @@ public class RegisterFagment extends Fragment {
                     myerorr.myDlalog("Gender False", "Please Choose Gender");
                 } else if (passString.equals(rePassString)) {
                     // Password OK
+                    uploadValuetoServer();
+                    Log.d("2octV1", "ok ==> ");
+
                 } else {
                     Myerorr myerorr = new Myerorr(getActivity());
                     myerorr.myDlalog("Password False", "Please Type Password Mapping");
@@ -120,6 +126,45 @@ public class RegisterFagment extends Fragment {
 
             }
         });
+    }
+
+    private void uploadValuetoServer() {
+
+        String tag = "2octV1";
+        Log.d(tag, "ok ==> ");
+        Myconstant myconstant = new Myconstant();
+
+        try {
+
+
+            //show log
+            Log.d(tag, "name ==> " + nameString);
+            Log.d(tag, "rename ==> " + renameString);
+            Log.d(tag, "pass ==> " + passString);
+            Log.d(tag, "gender ==> " + getderString);
+            Log.d(tag, "address ==> " + addressString);
+            Log.d(tag, "phon ==> " + phoneString);
+
+            MyPostUser myPostUser = new MyPostUser(getActivity());
+            myPostUser.execute(
+                    nameString,
+                    renameString,
+                    passString,
+                    getderString,
+                    addressString,
+                    phoneString,
+                    myconstant.getUrlpostUserString()
+
+             );
+            String result = myPostUser.get();
+            Log.d("2octV1", "Result ==>" + result);
+
+
+        } catch (Exception e) {
+            Log.d(tag, "e upload ==>" + e.toString());
+        }
+
+
     }
 
     private void toolBarController() {
