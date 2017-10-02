@@ -50,6 +50,14 @@ public class RegisterFagment extends Fragment {
         toolBarController();
 
         //save Controller
+        saveController();
+
+
+
+
+    } // onActivityCreate
+
+    private void saveController() {
         ImageView imageView = getView().findViewById(R.id.imvsave);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +68,7 @@ public class RegisterFagment extends Fragment {
                 EditText renameEdiText = getView().findViewById(R.id.editname);
                 EditText passEdiText = getView().findViewById(R.id.pass);
                 EditText repassEdiText = getView().findViewById(R.id.repass);
-                EditText manEdiText = getView().findViewById(R.id.ragman);
-                EditText maleEdiText = getView().findViewById(R.id.ragmale);
+
                 EditText addressEdiText = getView().findViewById(R.id.address);
                 EditText PhoneEdiText = getView().findViewById(R.id.phon);
 
@@ -71,8 +78,7 @@ public class RegisterFagment extends Fragment {
                 renameString = renameEdiText.getText().toString().trim();
                 passString = passEdiText.getText().toString().trim();
                 rePassString = repassEdiText.getText().toString().trim();
-                manString = manEdiText.getText().toString().trim();
-                maleString = maleEdiText.getText().toString().trim();
+
                 addressString = addressEdiText.getText().toString().trim();
                 phoneString = PhoneEdiText.getText().toString().trim();
 
@@ -82,8 +88,6 @@ public class RegisterFagment extends Fragment {
                      renameString.equals("")||
                      passString.equals("")||
                      rePassString.equals("")||
-                     manString.equals("")||
-                     maleString.equals("")||
                         addressString.equals("")||
                         phoneString.equals(""))
 
@@ -104,11 +108,7 @@ public class RegisterFagment extends Fragment {
                 }
             }//onclick
         });
-
-
-
-
-    } // onActivityCreate
+    }
 
     private void toolBarController() {
         Toolbar toolbar = getView().findViewById(R.id.tooberRegister);
