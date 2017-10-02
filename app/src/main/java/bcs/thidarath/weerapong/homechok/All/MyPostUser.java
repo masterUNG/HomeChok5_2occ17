@@ -2,6 +2,7 @@ package bcs.thidarath.weerapong.homechok.All;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -47,7 +48,7 @@ public class MyPostUser extends AsyncTask<String, Void, String>{
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            Log.d("2octV1", "e ==> " + e.toString());
             return null;
         }
 

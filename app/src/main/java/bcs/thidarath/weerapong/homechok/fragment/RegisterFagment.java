@@ -141,7 +141,7 @@ public class RegisterFagment extends Fragment {
             Log.d(tag, "name ==> " + nameString);
             Log.d(tag, "rename ==> " + renameString);
             Log.d(tag, "pass ==> " + passString);
-            Log.d(tag, "gender ==> " + getderString);
+            Log.d(tag, "gender ==> " + genderString);
             Log.d(tag, "address ==> " + addressString);
             Log.d(tag, "phon ==> " + phoneString);
 
@@ -150,7 +150,7 @@ public class RegisterFagment extends Fragment {
                     nameString,
                     renameString,
                     passString,
-                    getderString,
+                    genderString,
                     addressString,
                     phoneString,
                     myconstant.getUrlpostUserString()
